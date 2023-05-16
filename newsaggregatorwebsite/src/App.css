@@ -1,0 +1,77 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.pagination{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f7f7f7;
+  width: 100%;
+  padding: 20px 10px;
+  margin: 0;
+  list-style: none;
+}
+
+.pagination a{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 0 8px;
+  font-size: 20px;
+  background-color: #fff;
+  color: #1c1e29;
+  text-decoration: none;
+  padding: 10px 12px;
+}
+
+.pagination a:hover{
+  background-color: #ccc;
+  color: #fff;
+}
+
+.active-page{
+  background-color: #ccc;
+  color: #1c1e29;
+}
