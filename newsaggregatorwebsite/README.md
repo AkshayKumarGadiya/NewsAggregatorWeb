@@ -28,4 +28,6 @@ The New York Times: https://developer.nytimes.com/
 
 # With Docker Container
 - In both the frontend and backend folders, I configured all the settings to automatically install packages, migrate the database to a remote location, and serve the backend server on port 8080. 
-- Open the root directory of your system where the frontend and backend folders are located. Run the docker-compose.yml up --build command to create the container. Please refer to the DockerContainers.jpg file to see all running containers on Docker. Thank you
+- Open the root directory of your system where the frontend and backend folders are located. Run the docker-compose.yml up --build command to create the container. Please refer to the DockerContainers.jpg file to see all running containers on Docker.
+
+![alt text](../DockerContainers.jpg) <br />
