@@ -3,7 +3,6 @@ import { getNews, getGuardianNews, getNewYorkNews } from '../services/newsapi';
 import Select from "react-select";
 // import ReactPaginate from 'react-paginate';
 import DatePicker from 'react-datepicker';
-import moment from 'moment';
 import 'react-datepicker/dist/react-datepicker.css';
 
 const defaultImageLink = 'https://via.placeholder.com/300x200.png?text=No+Image';
@@ -142,6 +141,7 @@ const Home = ({author,source}) => {
                 setFilteredData(filteredArticlesByAuthor);
             }else{
                 alert("Data Not Found");
+                setFilteredData(initialData);
             }
         }else{
             const formattedSourceData = selectedSouces.map(item => `${item.value}`)
@@ -153,7 +153,8 @@ const Home = ({author,source}) => {
             if(filteredArticlesByBoth.length){
                 setFilteredData(filteredArticlesByBoth);
             }else{
-                alert("Data Not Found")
+                alert("Data Not Found");
+                setFilteredData(initialData);
             }
         }
     }
@@ -167,7 +168,8 @@ const Home = ({author,source}) => {
             if(filteredArticlesBySource.length){
                 setFilteredData(filteredArticlesBySource);
             }else{
-                alert("Data Not Found")
+                alert("Data Not Found");
+                setFilteredData(initialData);
             }
         }
         else{
@@ -182,7 +184,8 @@ const Home = ({author,source}) => {
             if(filteredArticlesByBoth.length){
                 setFilteredData(filteredArticlesByBoth);
             }else{
-                alert("Data Not Found")
+                alert("Data Not Found");
+                setFilteredData(initialData);
             }
         }
     }
@@ -198,9 +201,9 @@ const Home = ({author,source}) => {
         if(filteredNewsByDate.length){
             setFilteredData(filteredNewsByDate);
         }else{
-            alert("Data Not Found")
+            alert("Data Not Found");
+            setFilteredData(initialData);
         }
-        
     }
     return(
         <>
@@ -242,9 +245,6 @@ const Home = ({author,source}) => {
             <div class="col-sm-12 col-md-6 col-lg-4 mt-2">
                 <p className='mb-1'><label htmlFor='date-picker'><b>Filter by Date:</b></label></p>
                 <DatePicker id='date-picker' selected={selectedDate} onChange={filterByDateChange}></DatePicker>
-            </div>
-            <div class="col-sm-12 col-md-6 col-lg-4 mt-2 d-flex justify-content-md-end">
-                <button type="button" className="btn btn-primary">Clear Preferences</button>   
             </div>
         </div>
         <div className="container">

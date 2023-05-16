@@ -1,13 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { getNews, getGuardianNews, getNewYorkNews } from '../services/newsapi';
-import AuthUser from "../services/authenticationapi";
 
 const Preference = ({ setAuthor, setSourcesInfo }) => {
     const [authors, setAuthors] = useState([]);
     const [sources, setSources] = useState([]);
     const [savedAuthors, setSavedAuthors] = useState(new Set());
     const [savedSources, setSavedSources] = useState([]);
-    const {http} = AuthUser();
   
     useEffect(() => {
         const fetchAuthorData = async () => {
@@ -109,10 +107,12 @@ const Preference = ({ setAuthor, setSourcesInfo }) => {
         }
     };
 
+    // Delete all preferences from database
     const clearPreferences = () => {
         localStorage.clear();
+        setSavedAuthors(new Set()); // Add this line
+        setSavedSources([]); // Add this line
         alert("All preferences are clear")
-        // Delete all preferences from database
     }    
   
     return (
